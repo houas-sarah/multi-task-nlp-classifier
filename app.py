@@ -26,9 +26,7 @@ import tensorflow as tf
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import tokenizer_from_json
 
-# ----------------------------------------------------------------------
 # Configuration
-# ----------------------------------------------------------------------
 
 MODEL_PATH = "models/multitask_lstm.h5"
 TOKENIZER_PATH = "models/tokenizer.json"
@@ -38,9 +36,7 @@ LABEL_MAPS_PATH = "models/label_maps.pkl"
 MAX_SEQUENCE_LEN = 60
 
 
-# ----------------------------------------------------------------------
 # Model and assets loading
-# ----------------------------------------------------------------------
 
 @st.cache_resource
 def load_model_and_assets():
@@ -62,9 +58,7 @@ def load_model_and_assets():
 model, tokenizer, label_maps = load_model_and_assets()
 
 
-# ----------------------------------------------------------------------
 # Preprocessing and prediction helpers
-# ----------------------------------------------------------------------
 
 def preprocess_text(text: str) -> str:
     """
@@ -125,9 +119,7 @@ def predict_all_tasks(text: str) -> dict:
     }
 
 
-# ----------------------------------------------------------------------
-# Custom styling
-# ----------------------------------------------------------------------
+# styling
 
 st.set_page_config(
     page_title="Multi-Task NLP Classifier",
@@ -236,9 +228,7 @@ footer { visibility: hidden; }
 st.markdown(CUSTOM_CSS, unsafe_allow_html=True)
 
 
-# ----------------------------------------------------------------------
 # Layout
-# ----------------------------------------------------------------------
 
 st.markdown('<div class="main-container">', unsafe_allow_html=True)
 
